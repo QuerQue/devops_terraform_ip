@@ -5,10 +5,8 @@ security groups allow inbound traffic only to alb on 80 port which distributes t
 ec2 instances are part of asg which based on cpu utilization scale up/down instances
 vpc consists of multi az subnets 
 
-**next step, transformation to structure**
-
-devops_terraform_ip
-
+**next step, transformation to structure**  
+devops_terraform_ip  
 │-- modules/
 
 │   ├── vpc/
@@ -20,8 +18,11 @@ devops_terraform_ip
 │   │   ├── outputs.tf
 
 │   ├── alb/
+
 │   │   ├── main.tf
+
 │   │   ├── variables.tf
+
 │   │   ├── outputs.tf
 │   ├── ec2/
 │   │   ├── main.tf
