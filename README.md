@@ -6,7 +6,9 @@ ec2 instances are part of asg which based on cpu utilization scale up/down insta
 vpc consists of multi az subnets 
 
 **next step, transformation to structure**
-devops_terraform_ip/
+
+devops_terraform_ip
+
 │-- modules/
 │   ├── vpc/
 │   │   ├── main.tf
