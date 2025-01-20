@@ -10,10 +10,15 @@ vpc consists of multi az subnets
 devops_terraform_ip
 
 │-- modules/
+
 │   ├── vpc/
+
 │   │   ├── main.tf
+
 │   │   ├── variables.tf
+
 │   │   ├── outputs.tf
+
 │   ├── alb/
 │   │   ├── main.tf
 │   │   ├── variables.tf
