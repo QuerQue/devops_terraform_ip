@@ -140,15 +140,22 @@ resource "aws_s3_bucket" "web_storage" {
   bucket = "web-app-storage-bucket-0"
 }
 
+resource "aws_db_subnet_group" "db_subnet_group" {
+  name       = "my-db-subnet-group"
+  subnet_ids = aws_subnet.public[*].id
+}
+
 resource "aws_db_instance" "postgres" {
   allocated_storage    = 20
   engine               = "postgres"
   engine_version       = "14"
   instance_class       = "db.t3.micro"
   db_name              = "webdb"
-  username             = "admin"
-  password             = "password123"
+  username             = "admin123"
+  manage_master_user_password = true
   parameter_group_name = "default.postgres14"
   publicly_accessible  = false
   vpc_security_group_ids = [aws_security_group.web_sg.id]
+  db_subnet_group_name = aws_db_subnet_group.db_subnet_group.id
+  skip_final_snapshot = true
 }
